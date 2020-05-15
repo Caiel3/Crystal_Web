@@ -82,6 +82,23 @@ def Descarga(link):
             pass
     pass
     
+def Descargaindividual(link):
+    now=datetime.now()
 
+    
+    url_imagen = link # El link de la imagen
+    nombre_local_imagen = "img.png" # El nombre con el que queremos guardarla
+    try:
+        imagen = requests.get(url_imagen).content
+        with open(str(nombre_local_imagen), 'wb') as handler:
+	        handler.write(imagen)
+        pass
+            
+    except Exception as e:
+        print(e)
+        pass
+    pass
+    
 if __name__ == '__main__':
-    main()
+   # main()
+   Descargaindividual("https://www.gef.com.co/wcsstore/CrystalCo_CAT_AS /Gef/ES-CO/Imagenes/Masculino_Exterior/POLOS/Teo/190x240/Camiseta-Polo-Hombres-Teo-Negro-791-Frente-GEF.jpg")
